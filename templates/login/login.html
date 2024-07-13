@@ -1,0 +1,32 @@
+{% load static %}
+<html lang="es">
+<head>
+    <title>Iniciar Sesion</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css"/>
+</head>
+<body>
+<section class="container mt-5">
+    <div class="card rounded col-lg-7 mx-auto">
+        <div class="card-body">
+            <h4 class="card-title"></h4>
+            <form class="text-center" method="post"><input type="hidden">
+                {% csrf_token %}
+                <fieldset>
+                    <legend>Iniciar Sesión</legend>
+                    {{ form.errors }}
+                    <div class="form-floating mb-3">
+                        {{ form.username }}
+                        {{ form.username.label_tag }}
+                    </div>
+                    <div id="div_id_password" class="form-floating mb-3">
+                        {{ form.password }}
+                        {{ form.password.label_tag }}
+                    </div>
+                </fieldset>
+                <input type="submit" name="signin" value="Entrar"
+                       class="btn btn-primary" id="submit-id-signin"></form>
+        </div>
+    </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{% load static %}
+<html lang="es">
+<head>
+    <title>Iniciar Sesion</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css"/>
+</head>
+<body>
+<h1>Hola mi nombre es {{ user.get_full_name }}, tengo {{ user.age }} años y soy {{ user.gender }}</h1>
+</body>
+</html>
