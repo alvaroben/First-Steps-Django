@@ -1,3 +1,4 @@
+from django.contrib.auth import logout
 from django.contrib.auth.views import LoginView
 from django.shortcuts import render
 from django.urls import reverse_lazy
@@ -12,6 +13,5 @@ class MyLoginView(LoginView):
     form_class = LoginForm
 
 
-def home_view(request):
-    user = MyUser.objects.last()
-    return render(request, "login/home.html", {"user": user})
+def my_logout(request):
+    logout(request)

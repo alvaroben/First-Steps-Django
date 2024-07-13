@@ -13,7 +13,15 @@
                 {% csrf_token %}
                 <fieldset>
                     <legend>Iniciar Sesión</legend>
-                    {{ form.errors }}
+                    {% if form.errors %}
+                        {% for error in form.errors.as_data.values %}
+                            {% for data in error.0 %}
+                                <div class="alert alert-warning" role="alert">
+                                    {{ data }}
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+                    {% endif %}
                     <div class="form-floating mb-3">
                         {{ form.username }}
                         {{ form.username.label_tag }}
