@@ -1,6 +1,6 @@
 from django.contrib.auth import logout
 from django.contrib.auth.views import LoginView
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 
 from login.forms import LoginForm
@@ -15,3 +15,4 @@ class MyLoginView(LoginView):
 
 def my_logout(request):
     logout(request)
+    return redirect("login_url")
