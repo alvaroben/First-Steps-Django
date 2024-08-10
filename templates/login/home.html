@@ -6,49 +6,91 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css"/>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
-                aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarColor01">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Home
-                        <span class="visually-hidden">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                       aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                    </div>
-                </li>
-            </ul>
-            <div class="d-flex">
-                <a href="{% url 'logout_url' %}">
-                    <span class="bi bi-door-closed"></span>
-                </a>
-            </div>
-        </div>
+<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Home
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-sm-2" type="search" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
     </div>
+  </div>
 </nav>
 <h1>Hola mi nombre es {{ user.get_full_name }}, tengo {{ user.age }} años y soy {{ user.gender }}</h1>
+
+<table class="table table-hover">
+  <tbody>
+   <tr class="table-dark">
+      <th scope="row">año</th>
+      <td>marca</td>
+      <td>modelo</td>
+      <td>cilindrada</td>
+    </tr>
+
+     <tr class="table-secondary">
+      <th scope="row">2015</th>
+      <td>kawasaky</td>
+      <td>nija 300cc</td>
+      <td>299cc</td>
+    </tr>
+
+     <tr class="table-secondary">
+      <th scope="row">2022</th>
+      <td>husqvarna</td>
+      <td>svartpilen 401</td>
+      <td>378cc</td>
+    </tr>
+
+     <tr class="table-secondary">
+      <th scope="row">2024</th>
+      <td>Honda</td>
+      <td>cbr 600rr</td>
+      <td>600cc</td>
+    </tr>
+
+     <tr class="table-secondary">
+      <th scope="row">2020</th>
+      <td>Yamaha</td>
+      <td>h1</td>
+      <td>998cc</td>
+    </tr>
+
+     <tr class="table-secondary">
+      <th scope="row">2024</th>
+      <td>bmw</td>
+      <td>s1000rr</td>
+      <td>1000cc</td>
+    </tr>
+  <tbody>
 </body>
 </html>
