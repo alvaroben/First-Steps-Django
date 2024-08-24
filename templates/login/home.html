@@ -3,12 +3,13 @@
 <head>
     <title>Iniciar Sesion</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css"/>
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}" type="text/css"/>
+    <link rel="stylesheet" href="{% static "css/stilo.css" %}" type="text/css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">Jeuel's Car</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
                 aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -30,16 +31,15 @@
                     <a class="nav-link" href="#">About</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                       aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                    </div>
-                </li>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Categoría
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Sport</a></li>
+                        <li><a class="dropdown-item" href="#">Familiar</a></li>
+                        <li><a class="dropdown-item" href="#">Alta gama</a></li>
+                    </ul>
+                </li>                
             </ul>
             <div class="d-flex">
                 <a href="{% url 'logout_url' %}">
@@ -49,6 +49,55 @@
         </div>
     </div>
 </nav>
-<h1>Hola mi nombre es {{ user.get_full_name }}, tengo {{ user.age }} años y soy {{ user.gender }}</h1>
+<h1>Hola mi nombre es {{ user.get_full_name }}, tengo {{ user.age }} años y soy  {{ user.gender }}</h1>
+<table class="table table-info">
+    <thead>
+        <tr>
+        <th scope="col">tipo</th>
+        <th scope="col">Marca</th>
+        <th scope="col">Modelo</th>
+        <th scope="col">año</th>
+        <tr>
+            <td scope="row">Jeepeta</td>
+            <td scope="row">Toyota</td>
+            <td scope="row">Hilux 3500</td>
+            <td scope="row">2024</td>
+        </tr>
+        <tr>
+            <td scope="row">Carro</td>
+            <td scope="row">Mercedes Benz</td>
+            <td scope="row">AMG C300</td>
+            <td scope="row">2023</td>
+        </tr>
+        <tr>
+            <td scope="row">Carro</td>
+            <td scope="row">kia</td>
+            <td scope="row">picantu</td>
+            <td scope="row">2024</td>
+        </tr>
+        <tr>
+            <td scope="row">Carro</td>
+            <td scope="row">Mazda</td>
+            <td scope="row">c-x 5</td>
+            <td scope="row">2019</td>
+        </tr>
+        <tr>
+            <td scope="row">Carro</td>
+            <td scope="row">Ford muntange</td>
+            <td scope="row">GT-500 Shelby</td>
+            <td scope="row">2015</td>
+        </tr>
+        <tr>
+            <td scope="row">Carro</td>
+            <td scope="row">Honda</td>
+            <td scope="row">CRV</td>
+            <td scope="row">2020</td>
+        </tr>
+    </tr>
+    </thead>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
 </body>
 </html>
