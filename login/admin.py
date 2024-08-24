@@ -1,6 +1,9 @@
 from django.contrib import admin
 
-from login.models import UserType, MyUser
+from home.models import Car
 
-admin.site.register(UserType)
-admin.site.register(MyUser)
+class CarAdmin(admin.ModelAdmin):
+    pass
+# admin.site.register(UserType)
+# admin.site.register(MyUser)
+admin.site.register(Car, CarAdmin)

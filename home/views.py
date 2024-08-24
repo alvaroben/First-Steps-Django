@@ -5,4 +5,4 @@ from home.models import Car
 
 
 class HomeView(ListView):
-    modal = Car
+    model = Car
