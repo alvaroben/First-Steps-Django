@@ -10,12 +10,15 @@ class HomeView(ListView):
 
 class CarUpdate(UpdateView):
     model = Car
-    fields = ["brand",]
+    fields = ["brand", "car_type", "year", "condition" ]
     success_url = reverse_lazy("home_url")
 
 
 class CarDelete(DeleteView):
     model = Car
+    fields = ["brand", "car_type", "year", "condition" ]
+    success_url = reverse_lazy("home_url")
+
 
     def get_queryset(self):
         return Car.objects.all()

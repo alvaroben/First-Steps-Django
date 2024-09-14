@@ -49,29 +49,15 @@
         </div>
     </div>
 </nav>
-<table class="table">
-    <thead>
-    <tr>
-        <th>Marca</th>
-        <th>Tipo</th>
-        <th>Modelo</th>
-        <th>Condicion</th>
-        <th>Año</th>
-        <th>Acciones</th>
-    </tr>
-    </thead>
-    <tbody>
-    {% for car in object_list %}
-        <tr>
-        <td>{{ car.brand }}</td>
-        <td>{{ car.car_type }}</td>
-        <td>{{ car.model }}</td>
-        <td>{{car.condition}}</td>
-        <td>{{ car.year }}</td>
-        <td>{{ car.actions | safe }}</td>
-        </tr>
-    {% endfor %}
-    </tbody>
-</table>
+
+<div class="card">
+    <div class="card-title">Vas a borrar el vehiculo <b>{{ object.get_car_name }}</b> estas seguro?</div>
+    <div class="card-body">
+        <form method="post">{% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Eliminar">
+        </form>
+    </div>
+</div>
 </body>
 </html>
