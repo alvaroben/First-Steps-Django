@@ -3,7 +3,7 @@
 <head>
     <title>car list</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}" type="text/css"/>
+    <link rel="stylesheet" href="{% static "/css/bootstrap.css" %}">
     <link rel="stylesheet" href="{% static "css/stilo.css" %}" type="text/css">
 </head>
 <body>
@@ -56,6 +56,7 @@
             <th>tipo</th>
             <th>Modelo</th>
             <th>AÑO</th>
+            <th>ACCIONES</th>
             
         </tr>
     </thead>
@@ -68,7 +69,7 @@
         <td>{{car.model}}</td>
         <td>{{car.car_type}}</td>
         <td>{{car.year}}</td>
-
+        <td>{{car.actions | safe}}</td>
         </tr>
         {% endfor %}
     </tbody>
