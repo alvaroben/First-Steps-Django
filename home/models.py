@@ -16,7 +16,7 @@ class Car(models.Model):
 
     @property
     def actions(self):
-        return """
-        <i style="color: blue;" class="bi bi-pencil"></i>
-        <i style="color: red" class="bi bi-trash"></i>
+        return f"""
+        <a href="/update_car/{self.id}" style="color: blue;" class="bi bi-pencil"></a>
+        <a href="/delete_car/{self.id}" style="color: red" class="bi bi-trash"></a>
         """
