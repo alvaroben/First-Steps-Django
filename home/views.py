@@ -1,5 +1,5 @@
 from django.urls import reverse_lazy
-from django.views.generic import ListView, UpdateView, DeleteView
+from django.views.generic import ListView, UpdateView, DeleteView, CreateView
 
 from home.models import Car
 
@@ -23,3 +23,8 @@ class CarDelete(DeleteView):
     def get_queryset(self):
         return Car.objects.all()
 
+
+class CarCreate(CreateView):
+    model = Car
+    fields = "__all__"
+    success_url = reverse_lazy("home_url")
