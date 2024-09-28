@@ -20,3 +20,20 @@ class MyUser(AbstractUser):
     def user_presentation(self):
         message = "Hola, soy %s, tengo %s y soy %s" % (self.first_name, self.age, self.gender)
         return message
+
+    model = models.CharField(max_lenght=50)
+    brand = models.CharField(max_length=50)
+    car_type =models.CharField(max_lenght=50, choices=CAR_TYPES)
+    year = models.IntergerField
+
+
+
+
+
+
+
+    @propertydef
+    action(self):
+    return f"""
+    <a href="/update_car/(self.id" style="color: blue;" class="bi bi-pencil"></a>
+<i style="color: red class="bi bi-trash"></i>

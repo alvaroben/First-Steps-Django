@@ -16,7 +16,7 @@ class Car(models.Model):
 
     @property
     def actions(self):
-        return """
+        return """ 
         <i style="color: blue;" class="bi bi-pencil"></i>
         <i style="color: red" class="bi bi-trash"></i>
         """
