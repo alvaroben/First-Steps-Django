@@ -17,7 +17,9 @@ class Car(models.Model):
     @property
     def actions(self):
         return f"""
-        <a href="/update_car/{self.id}"class="bi bi-patch-plus"></i>
-        <i class="bi bi-trash3-fill"></i>
+        <a href="/update_car/{self.id}"class="bi bi-patch-plus"></a>
+        <a href="/delete_car/{self.id}"class="bi bi-trash-fill"></i>
 """
+    def get_car_name(self):
+        return f"{self.brand} {self.model} {self.year}"
     
