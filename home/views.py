@@ -16,6 +16,8 @@ class CarUpdate(UpdateView):
 
 class CarDelete(DeleteView):
     model = Car
+    fields = ["brand", "brand", "car_type", "year"]
+    success_url = reverse_lazy("home_url")
 
     def get_queryset(self):
         return Car.objects.all()

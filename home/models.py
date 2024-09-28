@@ -20,3 +20,6 @@ class Car(models.Model):
         <a href="/update_car/{self.id}" style="color: blue;" class="bi bi-pencil"></a>
         <a href="/delete_car/{self.id}" style="color: red" class="bi bi-trash"></a>
         """
+
+def get_car_name(self):
+    return f"{self.brand} {self.model} {self.year}"
